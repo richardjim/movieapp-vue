@@ -1,7 +1,7 @@
 <template>
   <header>
   <router-link to="/">
-  <h1><span>Search</span>Movies</h1>
+  <h1><span>Search</span>MoviesApp.....</h1>
   </router-link>
   </header>
   <main>
@@ -41,7 +41,7 @@ h1{
   color: #fff;
   font-size: 20px;
   span{
-    color: #24b883;
+    color: rosybrown;
   }
 }
 </style>
