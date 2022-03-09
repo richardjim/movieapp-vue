@@ -36,4 +36,12 @@ header{
   background-color: #2c3d4e;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
 }
+
+h1{
+  color: #fff;
+  font-size: 20px;
+  span{
+    color: #24b883;
+  }
+}
 </style>
