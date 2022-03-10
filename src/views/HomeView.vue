@@ -16,7 +16,18 @@
 <input type="submit" value="Search" />
 </form>
 <div class="movies-list">
-MOVIES
+  <div class="movie" v-for="movie in movies" :key="movie.imdbID">
+    <!-- {{movie.Title}} -->
+    <router-link :to="'/movie/'+ movie.imdbID" class="movie-link">
+    <div class="product-image">
+      <img :src="movie.Poster" alt="Movie Poster" />
+      <div class="type">{{movie.Type}}</div>
+    </div>
+    <div class="detail">
+      <p class="y">{{movie.Title}}</p>
+    </div>
+    </router-link>
+  </div>
 </div>
 </div>
 </template>
@@ -24,6 +35,7 @@ MOVIES
 <script>
 
 import {ref} from 'vue';
+import env  from '@/env.js'
 export default {
 setup () {
 const search = ref("");
@@ -31,7 +43,15 @@ const movies = ref([]);
 
 const SearchMovies = () => {
   if (search.value != "") {
-    console.log(search.value);
+    // console.log(search.value);
+    fetch(`http://www.omdbapi.com/?apikey=${env.apikey}&s=${search.value}`)
+    // http://www.omdbapi.com/?i=tt3896198&apikey=9a0bba4a
+    .then(response => response.json())
+    .then(data => {
+      movies.value = data.Search;
+      search.value = "";
+    })
+
   }
 }
 return{
@@ -121,5 +141,28 @@ background: none;
   }
 }
 }
+}
+
+.movie-list{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 8px;
+  .movie{
+    max-width: 50%;
+    flex:1 1 50%;
+    padding: 16px 8px;
+    .movie-list{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      .product-image{
+        position:relative;
+display: block;
+
+
+      }
+    }
+  }
 }
 </style>
