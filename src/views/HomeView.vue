@@ -24,7 +24,8 @@
       <div class="type">{{movie.Type}}</div>
     </div>
     <div class="detail">
-      <p class="y">{{movie.Title}}</p>
+      <p class="year">{{movie.Year}}</p>
+      <h3>{{movie.Title}}</h3>
     </div>
     </router-link>
   </div>
@@ -72,6 +73,7 @@ position: relative;
   width: 100%;
   height: 300px;
   object-fit: cover;
+  
   
   position: relative;
   z-index: 0;
@@ -129,12 +131,12 @@ background: none;
   width: 100%;
   max-width: 300px;
   background-color: #42b883;
-  padding: 16px;
+  padding: 14px;
   color:#fff;
   font-size: 20px;
   text-transform: uppercase;
   transition: 00.4s;
-  border-radius: 8px;
+  border-radius: 15px;
 
   &:active{
     background-color: #3b8070;
@@ -143,7 +145,7 @@ background: none;
 }
 }
 
-.movie-list{
+.movies-list{
   display: flex;
   flex-wrap: wrap;
   margin: 0px 8px;
@@ -151,7 +153,7 @@ background: none;
     max-width: 50%;
     flex:1 1 50%;
     padding: 16px 8px;
-    .movie-list{
+    .movie-link{
       display: flex;
       flex-direction: column;
       height: 100%;
@@ -160,7 +162,39 @@ background: none;
         position:relative;
 display: block;
 
+img{
+  display: block;
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
 
+}
+.type{
+  position: absolute;
+  padding: 8px 16px;
+  background-color: #42b883;
+  color: #ddd;
+  bottom: 16px;
+  left: 0px;
+  text-transform: capitalize;
+
+
+}
+      }
+      .detail{
+        background-color: #496583;
+        padding: 16px 8px;
+        flex: 1 1 100%;
+        border-radius: 0px 0px 8px 8px;
+.year{
+  color: #fff;
+  font-size: 14px;
+}
+.h3{
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+}
       }
     }
   }
