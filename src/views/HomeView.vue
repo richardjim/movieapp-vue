@@ -1,7 +1,7 @@
 <template>
 <div class="home">
 <div class="feature-card">
-<router-link to="/movie/tt049591">
+<router-link to="/movie">
 
 <img src="https://mcdn.wallpapersafari.com/medium/64/13/yF7uYs.jpeg"/>
 <div class="detail">
